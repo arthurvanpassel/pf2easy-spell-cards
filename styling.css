@@ -11,29 +11,25 @@ body.cards main {
 
 body.cards main page {
 	width: 210mm;
-    height: 296mm;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+	height: 296mm;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
 	background-color: white;
 }
 
-body.cards main page article.result:first-child,
-body.cards main page article.result:nth-child(2),
-body.cards main page article.result:nth-child(3) {
+body.cards main article.result:first-child,
+body.cards main article.result:nth-child(2),
+body.cards main article.result:nth-child(3) {
 	margin-top: 14.65mm;
 }
 
-body.cards main page article.result:nth-child(7),
-body.cards main page article.result:nth-child(8),
-body.cards main page article.result:nth-child(9) {
+body.cards main article.result:nth-child(9n + 7),
+body.cards main article.result:nth-child(9n + 8),
+body.cards main article.result:nth-child(9n + 9) {
 	margin-bottom: 14.65mm;
 }
-
-/* body.cards article.result:nth-child(9n) {
-	margin-bottom: 29.3mm;
-} */
 
 body.cards article.result {
 	padding: 10px;
@@ -52,17 +48,26 @@ body.cards header>h2 {
 	padding-bottom: 0.5em;
 }
 
+body.cards section.traits {
+	display: flex;
+	align-items: flex-start;
+}
+
 body.cards section.traits>div>h3 {
 	font-size: 10px;
+	padding: 0.1em 0.5em;
 }
 
 body.cards section.details>p {
-	font-size: 12px;
+	font-size: 11px;
 	line-height: 1.25em;
+	letter-spacing: -0.3px;
 }
 
 body.cards section.content>p,
-body.cards section.content li {
+body.cards section.content li,
+body.cards article:after,
+body.cards article:before {
 	font-size: 12px;
 	line-height: 1.25em;
 }
@@ -73,23 +78,46 @@ body.cards section.content ul {
 }
 
 body.cards .big section.content>p,
-body.cards .big section.content li {
+body.cards .big section.content li,
+body.cards .big:after,
+body.cards .big:before {
 	font-size: 11px;
 }
 
 body.cards .bigger section.content>p,
-body.cards .bigger section.content li {
+body.cards .bigger section.content li,
+body.cards .bigger:after,
+body.cards .bigger:before {
 	font-size: 10px;
 }
 
 body.cards .biggest section.content>p,
-body.cards .biggest section.content li {
+body.cards .biggest section.content li,
+body.cards .biggest:after,
+body.cards .biggest:before {
 	font-size: 9px;
 }
 
 body.cards .tiny section.content>p,
-body.cards .tiny section.content li {
+body.cards .tiny section.content li,
+body.cards .tiny:after,
+body.cards .tiny:before {
 	font-size: 13px;
+}
+
+body.cards .result.continue:after, 
+body.cards .result.back:before {
+	font-family: Goodot;
+	font-weight: bold;
+}
+
+body.cards .result.continue:after {
+	content: "(Continued on back)";
+}
+
+body.cards .result.back:before {
+	content: "(Continued from front)";
+	transform: scaleX(-1);
 }
 
 @media print {
