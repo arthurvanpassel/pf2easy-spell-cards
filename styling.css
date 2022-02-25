@@ -1,0 +1,112 @@
+#cards_btn {
+	font-size: 0.8em;
+	margin-top: 0.1em;
+	border-radius: 50%;
+}
+
+body.cards main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+body.cards main page {
+	width: 210mm;
+    height: 296mm;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+	background-color: white;
+}
+
+body.cards main page article.result:first-child,
+body.cards main page article.result:nth-child(2),
+body.cards main page article.result:nth-child(3) {
+	margin-top: 14.65mm;
+}
+
+body.cards main page article.result:nth-child(7),
+body.cards main page article.result:nth-child(8),
+body.cards main page article.result:nth-child(9) {
+	margin-bottom: 14.65mm;
+}
+
+/* body.cards article.result:nth-child(9n) {
+	margin-bottom: 29.3mm;
+} */
+
+body.cards article.result {
+	padding: 10px;
+	height: 3.5in;
+	width: 2.5in;
+	display: flex;
+	flex-direction: column;
+	border: 1px black;
+	border-style: dashed;
+	border-radius: 15px;
+}
+
+body.cards header>h1,
+body.cards header>h2 {
+	font-size: 15px;
+	padding-bottom: 0.5em;
+}
+
+body.cards section.traits>div>h3 {
+	font-size: 10px;
+}
+
+body.cards section.details>p {
+	font-size: 12px;
+	line-height: 1.25em;
+}
+
+body.cards section.content>p,
+body.cards section.content li {
+	font-size: 12px;
+	line-height: 1.25em;
+}
+
+body.cards section.content ul {
+	margin-bottom: 0;
+	padding-left: 0.75em;
+}
+
+body.cards .big section.content>p,
+body.cards .big section.content li {
+	font-size: 11px;
+}
+
+body.cards .bigger section.content>p,
+body.cards .bigger section.content li {
+	font-size: 10px;
+}
+
+body.cards .biggest section.content>p,
+body.cards .biggest section.content li {
+	font-size: 9px;
+}
+
+body.cards .tiny section.content>p,
+body.cards .tiny section.content li {
+	font-size: 13px;
+}
+
+@media print {
+	@page {
+		margin: 0;
+		size: 210mm 297mm !important;
+		-webkit-print-color-adjust: exact;
+	}
+
+	body.cards {
+		/* Set the background to gray to visualize the page size in the print preview */
+		background-color: gray;
+		min-width: initial !important;
+		margin: 0 !important
+	}
+
+	body.cards>header {
+		display: none !important;
+	}
+}
