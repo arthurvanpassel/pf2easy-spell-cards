@@ -26,20 +26,70 @@ $(document).ready(function () {
 						});
 					}
 
-					$("article.result").on('click', function () {
-						if ($(this).hasClass('tiny')) {
-							$(this).removeClass('tiny');
-						} else if ($(this).hasClass('big')) {
-							$(this).removeClass('big');
-							$(this).addClass('bigger');
-						} else if ($(this).hasClass('bigger')) {
-							$(this).removeClass('bigger');
-							$(this).addClass('biggest');
-						} else if ($(this).hasClass('biggest')) {
-							$(this).removeClass('biggest');
-							$(this).addClass('tiny');
+					$("body").on("click", "article.result", function (e) {
+						if (e.ctrlKey) {
+							if ($(this).hasClass('continue')) {
+								var length = $(this).find(".parte2 .content").length
+								var lastelement = $(this).find(".parte2 .content:last-child")[0]
+								if (length > 1 && lastelement) {
+									$(this).next().find(".parte2").prepend(lastelement.outerHTML)
+									$(lastelement).remove()
+								} else if (length && lastelement) {
+									var lastchild = $(lastelement).find('> *:last-child')[0];
+									if (!$(this).next().find(".parte2 .content.first").length) {
+										$(this).next().find(".parte2").prepend("<section class='content first'></section>")
+									}
+									$(this).next().find(".parte2 .content.first").prepend(lastchild.outerHTML)
+									$(lastchild).remove()
+								}
+							} else if ($(this).hasClass('back')) {
+								var firstelement = $(this).find(".parte2 .content:first-child")[0]
+								if (firstelement) {
+									if ($(firstelement).hasClass('first')) {
+										var firstchild = $(firstelement).find('> *:first-child')[0]
+										$(this).prev().find(".parte2 .content:last-child").append(firstchild.outerHTML)
+										$(firstchild).remove()
+										if (!$(firstelement).children().length) {
+											$(firstelement).remove()
+										}
+									} else {
+										$(this).prev().find(".parte2").append(firstelement.outerHTML)
+										$(firstelement).remove()
+									}
+								} else {
+									$(this).prev().removeClass("continue")
+									$(this).remove()
+								}
+							} else {
+								$(this).addClass("continue")
+								$(this).after("<article class='result back'><div class='parte2'></div></article>")
+							}
 						} else {
-							$(this).addClass('big');
+							if (!$(this).hasClass('back')) {
+								var oldClass = "";
+								var newClass = "";
+								if ($(this).hasClass('tiny')) {
+									oldClass = 'tiny'
+								} else if ($(this).hasClass('big')) {
+									oldClass = 'big';
+									newClass = 'bigger';
+								} else if ($(this).hasClass('bigger')) {
+									oldClass = 'bigger';
+									newClass = 'biggest';
+								} else if ($(this).hasClass('biggest')) {
+									oldClass = 'biggest';
+									newClass = 'tiny';
+								} else {
+									newClass = 'big';
+								}
+				
+								$(this).removeClass(oldClass)
+								$(this).addClass(newClass)
+								if ($(this).hasClass('continue')) {
+									$(this).next().removeClass(oldClass)
+									$(this).next().addClass(newClass)
+								}
+							}
 						}
 					});
 				});

@@ -112,11 +112,15 @@ body.cards .result.back:before {
 }
 
 body.cards .result.continue:after {
-	content: "(Continued on back)";
+	content: '(Continued on back)';
 }
 
 body.cards .result.back:before {
-	content: "(Continued from front)";
+	content: '(Continued from front)';
+	transform: scaleX(-1);
+}
+
+body.cards .result.back > * {
 	transform: scaleX(-1);
 }
 
