@@ -31,6 +31,8 @@ $(document).ready(function () {
 						});
 					}
 
+					var jsonapi = $.getJSON('https://raw.githubusercontent.com/arthurvanpassel/pf2easy-spell-cards/main/pf2-api-spells-adapted.json', function(data) {});
+					
 					$("body").on("click", "article.result", function (e) {
 						if (e.ctrlKey) {
 							if ($(this).hasClass('continue')) {
@@ -73,6 +75,12 @@ $(document).ready(function () {
 								$(this).addClass("continue");
 								$(this).after("<article class='result back "+ sizeclass +"'><div class='parte2'></div></article>");
 							}
+						} else if (e.altKey) {
+							var title = $(this).find("h1")[0].innerText;
+							var item = jsonapi.find(element => element.name.toUpperCase() == title)
+							console.log(item)
+							$(this).find(".parte2")[0].innerHTML = item.description
+
 						} else {
 							if (!$(this).hasClass('back')) {
 								var oldClass = "";
