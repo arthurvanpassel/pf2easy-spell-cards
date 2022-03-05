@@ -4,42 +4,43 @@
 	border-radius: 50%;
 }
 
-body.cards main {
-	display: flex;
-	flex-wrap: wrap;
+body.cards {
+	/* Set the background to gray to visualize the page size in the print preview */
+	background-color: lightgray;
+	min-width: initial !important;
+	margin: 0 !important;
+	--border-radius: 0;
 }
 
-body.cards main page {
-	width: 210mm;
-	height: 296mm;
+body.cards main#lienzo {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: flex-start;
-	background-color: white;
+	width: 210mm;
+	margin: auto;
 }
 
 body.cards main article.result:first-child,
 body.cards main article.result:nth-child(2),
 body.cards main article.result:nth-child(3) {
-	margin-top: 14.65mm;
+	margin-top: 15.15mm;
 }
 
 body.cards main article.result:nth-child(9n + 7),
 body.cards main article.result:nth-child(9n + 8),
 body.cards main article.result:nth-child(9n + 9) {
-	margin-bottom: 14.65mm;
+	margin-bottom: 30.3mm;
 }
 
 body.cards article.result {
-	padding: 10px;
+	padding: 5px 10px;
 	height: 3.5in;
 	width: 2.5in;
 	display: flex;
 	flex-direction: column;
-	border: 1px black;
-	border-style: dashed;
-	border-radius: 15px;
+	border: 1px dashed lightgray;
+	border-radius: var(--border-radius);
+	position: relative;
 }
 
 body.cards header>h1,
@@ -48,9 +49,17 @@ body.cards header>h2 {
 	padding-bottom: 0.5em;
 }
 
+body.cards header>h1 svg {
+	display: none;
+}
+
 body.cards section.traits {
 	display: flex;
 	align-items: flex-start;
+}
+
+body.cards section.traits>div {
+	flex-wrap: wrap
 }
 
 body.cards section.traits>div>h3 {
@@ -64,45 +73,58 @@ body.cards section.details>p {
 	letter-spacing: -0.3px;
 }
 
-body.cards section.content>p,
-body.cards section.content li,
+body.cards .parte2 section>p,
+body.cards .parte2 section li,
 body.cards article:after,
 body.cards article:before {
-	font-size: 12px;
+	font-size: 11px;
 	line-height: 1.25em;
 }
 
-body.cards section.content ul {
+body.cards article.result a {
+    background: none;
+}
+
+body.cards .parte2 section ul {
 	margin-bottom: 0;
 	padding-left: 0.75em;
 }
 
-body.cards .big section.content>p,
-body.cards .big section.content li,
-body.cards .big:after,
-body.cards .big:before {
-	font-size: 11px;
+body.cards .parte2 section p.tab0 {
+    text-indent: -1em;
+    margin-left: 1em;
 }
 
-body.cards .bigger section.content>p,
-body.cards .bigger section.content li,
-body.cards .bigger:after,
-body.cards .bigger:before {
+body.cards .parte2 section label.nolink {
+    margin: 0;
+}
+
+body.cards .big .parte2 section>p,
+body.cards .big .parte2 section li,
+body.cards .big:after,
+body.cards .big:before {
 	font-size: 10px;
 }
 
-body.cards .biggest section.content>p,
-body.cards .biggest section.content li,
-body.cards .biggest:after,
-body.cards .biggest:before {
+body.cards .bigger .parte2 section>p,
+body.cards .bigger .parte2 section li,
+body.cards .bigger:after,
+body.cards .bigger:before {
 	font-size: 9px;
 }
 
-body.cards .tiny section.content>p,
-body.cards .tiny section.content li,
+body.cards .tinier .parte2 section>p,
+body.cards .tinier .parte2 section li,
+body.cards .tinier:after,
+body.cards .tinier:before {
+	font-size: 13px;
+}
+
+body.cards .tiny .parte2 section>p,
+body.cards .tiny .parte2 section li,
 body.cards .tiny:after,
 body.cards .tiny:before {
-	font-size: 13px;
+	font-size: 12px;
 }
 
 body.cards .result.continue:after, 
@@ -113,15 +135,17 @@ body.cards .result.back:before {
 
 body.cards .result.continue:after {
 	content: '(Continued on back)';
+	position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
 
 body.cards .result.back:before {
 	content: '(Continued from front)';
-	transform: scaleX(-1);
 }
 
-body.cards .result.back > * {
-	transform: scaleX(-1);
+body.cards .result.back .content.first p:not(.tab0) {
+	text-indent: 1em;
 }
 
 @media print {
@@ -131,14 +155,11 @@ body.cards .result.back > * {
 		-webkit-print-color-adjust: exact;
 	}
 
-	body.cards {
-		/* Set the background to gray to visualize the page size in the print preview */
-		background-color: gray;
-		min-width: initial !important;
-		margin: 0 !important
-	}
-
 	body.cards>header {
 		display: none !important;
+	}
+
+	body.cards, body.cards main#lienzo {
+		background-color: initial;
 	}
 }
