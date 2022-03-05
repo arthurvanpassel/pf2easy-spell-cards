@@ -9,10 +9,10 @@ $(document).ready(function () {
   document.title = document.title + " - Cards";
   $("body").addClass('cards');
 
-  var borderslider = '<div class="slidecontainer ml-auto"><span>Card border radius</span><input type="range" min="0" max="20" value="0" class="slider" id="borderslider"></div>'
+  var borderslider = '<div class="slidecontainer ml-auto"><span>Card border radius</span><input type="range" min="0" max="20" value="0" class="slider" id="borderslider"></div>';
   $(borderslider).insertAfter($('body > header h1'));
   $("#borderslider").on("input", function () {
-    $("body.cards").css("--border-radius", $(this).val() + "px")
+    $("body.cards").css("--border-radius", $(this).val() + "px");
   })
 
   if (window.location.pathname.indexOf("spellbook") > 0) {
@@ -24,44 +24,44 @@ $(document).ready(function () {
   $("body").on("click", "article.result", function (e) {
     if (e.ctrlKey) {
       if ($(this).hasClass('continue')) {
-        var length = $(this).find(".parte2 > section").length
-        var lastelement = $(this).find(".parte2 > section:last-child")[0]
+        var length = $(this).find(".parte2 > section").length;
+        var lastelement = $(this).find(".parte2 > section:last-child")[0];
         if (length > 1 && lastelement) {
-          $(this).next().find(".parte2").prepend(lastelement.outerHTML)
-          $(lastelement).remove()
+          $(this).next().find(".parte2").prepend(lastelement.outerHTML);
+          $(lastelement).remove();
         } else if (length && lastelement) {
           var lastchild = $(lastelement).find('> *:last-child')[0];
           if (!$(this).next().find(".parte2 > section.first").length) {
-            $(this).next().find(".parte2").prepend("<section class='content first'></section>")
+            $(this).next().find(".parte2").prepend("<section class='content first'></section>");
           }
-          $(this).next().find(".parte2 > section.first").prepend(lastchild.outerHTML)
-          $(lastchild).remove()
+          $(this).next().find(".parte2 > section.first").prepend(lastchild.outerHTML);
+          $(lastchild).remove();
         }
       } else if ($(this).hasClass('back')) {
-        var firstelement = $(this).find(".parte2 > section:first-child")[0]
+        var firstelement = $(this).find(".parte2 > section:first-child")[0];
         if (firstelement) {
           if ($(firstelement).hasClass('first')) {
-            var firstchild = $(firstelement).find('> *:first-child')[0]
-            $(this).prev().find(".parte2 > section:last-child").append(firstchild.outerHTML)
-            $(firstchild).remove()
+            var firstchild = $(firstelement).find('> *:first-child')[0];
+            $(this).prev().find(".parte2 > section:last-child").append(firstchild.outerHTML);
+            $(firstchild).remove();
             if (!$(firstelement).children().length) {
-              $(firstelement).remove()
+              $(firstelement).remove();
             }
           } else {
-            $(this).prev().find(".parte2").append(firstelement.outerHTML)
-            $(firstelement).remove()
+            $(this).prev().find(".parte2").append(firstelement.outerHTML);
+            $(firstelement).remove();
           }
         } else {
-          $(this).prev().removeClass("continue")
-          $(this).remove()
+          $(this).prev().removeClass("continue");
+          $(this).remove();
         }
       } else {
         var sizeclass = "";
         if (this.classList.length > 1) {
-          sizeclass = this.classList[1]
+          sizeclass = this.classList[1];
         }
-        $(this).addClass("continue")
-        $(this).after("<article class='result back "+ sizeclass +"'><div class='parte2'></div></article>")
+        $(this).addClass("continue");
+        $(this).after("<article class='result back "+ sizeclass +"'><div class='parte2'></div></article>");
       }
     } else {
       if (!$(this).hasClass('back')) {
@@ -82,11 +82,11 @@ $(document).ready(function () {
           newClass = 'big';
         }
 
-        $(this).removeClass(oldClass)
-        $(this).addClass(newClass)
+        $(this).removeClass(oldClass);
+        $(this).addClass(newClass);
         if ($(this).hasClass('continue')) {
-          $(this).next().removeClass(oldClass)
-          $(this).next().addClass(newClass)
+          $(this).next().removeClass(oldClass);
+          $(this).next().addClass(newClass);
         }
       }
     }
