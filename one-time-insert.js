@@ -13,7 +13,7 @@ $(document).ready(function () {
   $(borderslider).insertAfter($('body > header h1'));
   $("#borderslider").on("input", function () {
     $("body.cards").css("--border-radius", $(this).val() + "px");
-  })
+  });
 
   if (window.location.pathname.indexOf("spellbook") > 0) {
     $(".details p:first-child").each(function () {
