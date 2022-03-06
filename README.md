@@ -12,6 +12,7 @@ If you use the one-time-insert, you have to copy-paste the javascript code into 
 Extensions like [User Javascript and CSS on Chrome]() or [Code Injector on Firefox](https://addons.mozilla.org/en-US/firefox/addon/codeinjector/), will allow you to automatically add the code to the website every time that u use it. Don't forget to enable jQuery, because it is used in the javascript code.
 This works essentially in the same way as the one time insert, except that you will see a button with cards to click when you want to use this functionality on your spells.
 
+If you need a regex (like in Code Injector for example), you can use this regex: pf2easy\\.com\\/(spellbook|sheets)\\/spells.php
 
 ### Extra functions
 There are essentially 3 functions to use on a card:
@@ -31,6 +32,8 @@ This is not yet finished and doesn't always give good results (parsing errors) (
 These functions can be used together to create the best cards for your use.
 
 You can also change the border radius of the cards with the slider next to this link.
+
+You can also remove the source from the cards, since they don't appear on the official ones either.
 
 
 ## Why

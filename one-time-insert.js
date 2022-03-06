@@ -9,27 +9,35 @@ $(document).ready(function () {
   document.title = document.title + " - Cards";
   $("body").addClass('cards');
 
-  var borderslider = '<div class="slidecontainer ml-auto"><span>Card border radius</span><input type="range" min="0" max="20" value="0" class="slider" id="borderslider"></div>';
-  $(borderslider).insertAfter($('body > header h1'));
+  var insert = '<div class="slidecontainer ml-auto"><span>Card border radius</span><input type="range" min="0" max="20" value="0" class="slider" id="borderslider"></div><a id="help" href="#" class="ml-auto">Card functions help</a><a id="sourceRemove" href="#" class="ml-auto">Remove source</a>';
+  $(insert).insertAfter($('body > header h1'));
+
   $("#borderslider").on("input", function () {
     $("body.cards").css("--border-radius", $(this).val() + "px");
   });
 
-  var help = '<a id="help" href="#" class="ml-auto">Card functions help</a>';
-  $(help).insertAfter($('body > header .slidecontainer'));
   $('#help').on('click', function () {
-    if (window.confirm("There are essentially 3 functions to use on a card:\n\n1. Click: Change the description font size.\nThis goes from normal -> small -> smaller -> bigger -> big -> normal.\n\n2. Ctrl + Click: Split the card in a front and back.\nClick once to make the back card appear, and keep clicking to add more paragraphs.\nClick on the backside of the card to put the last paragraph back on the front card.\n\n3. Alt + Click: Change default description to api description.\nSometimes, the description is not complete with heightened information.\nYou can switch between the default and an (experimental) one, that might improve the card.\nThis is not yet finished and doesn't always give good results (parsing errors)\n\nThese functions can be used together to create the best cards for your use.\n\nYou can also change the border radius of the cards with the slider next to this link.\n\nWhen you're done just click print and enjoy!\nClick 'ok' for more info on https://github.com/arthurvanpassel/pf2easy-spell-cards")) {
+    if (window.confirm("There are essentially 3 functions to use on a card:\n\n1. Click: Change the description font size.\nThis goes from normal -> small -> smaller -> bigger -> big -> normal.\n\n2. Ctrl + Click: Split the card in a front and back.\nClick once to make the back card appear, and keep clicking to add more paragraphs.\nClick on the backside of the card to put the last paragraph back on the front card.\n\n3. Alt + Click: Change default description to api description.\nSometimes, the description is not complete with heightened information.\nYou can switch between the default and an (experimental) one, that might improve the card.\nThis is not yet finished and doesn't always give good results (parsing errors)\n\nThese functions can be used together to create the best cards for your use.\n\nYou can also change the border radius of the cards with the slider next to this link.\nYou can also remove the Source from the card.\n\nWhen you're done just click print and enjoy!\nClick 'ok' for more info on https://github.com/arthurvanpassel/pf2easy-spell-cards")) {
       window.open('https://github.com/arthurvanpassel/pf2easy-spell-cards', "_blank");
     };
   });
 
-  if (window.location.pathname.indexOf("spellbook") > 0) {
+  $("#sourceRemove").on('click', function () {
+    if (window.location.pathname.indexOf("spellbook") > 0) {
     $(".details p:first-child").each(function () {
       if (this.innerHTML.indexOf('; <strong>Source') > 0) {
-        this.innerHTML = this.innerHTML.substring(0, this.innerHTML.indexOf('; <strong>Source'));
+      this.innerHTML = this.innerHTML.substring(0, this.innerHTML.indexOf('; <strong>Source'));
       }
     });
-  }
+    } else {
+    $(".details p:last-child").each(function () {
+      if (this.innerHTML.indexOf('<strong>Source') >= 0) {
+      $(this).remove();
+      }
+    });
+    }
+    $(this).hide()
+  });
 
   let jsonapi;
   let httpRequest = new XMLHttpRequest();
@@ -81,11 +89,11 @@ $(document).ready(function () {
           sizeclass = this.classList[1];
         }
         $(this).addClass("continue");
-        $(this).after("<article class='result back "+ sizeclass +"'><div class='parte2'></div></article>");
+        $(this).after("<article class='result back " + sizeclass + "'><div class='parte2'></div></article>");
       }
     } else if (e.altKey) {
       var title = $(this).find("h1")[0].innerText.replace("’", "'");
-      var i = jsonapi.list.findIndex(element => element.name.toUpperCase() == title);
+      var i = jsonapi.list.findIndex(element => element.name.toLowerCase() == title.toLowerCase());
       if (jsonapi.list[i].current == "old") {
         $(this).find(".parte2")[0].innerHTML = jsonapi.list[i].description;
         jsonapi.list[i].current = "description";
