@@ -43,6 +43,24 @@ There are still some things that could improve, and I would like to add a recto 
 
 
 ## Results
-Solarized dark             |  Solarized Ocean
+Offical Paizo cards  |  Generated Pf2 Easy cards
 :-------------------------:|:-------------------------:
-![](./paizo-official-cards/arcane-animate-dead.jpg)  |  ![](./generated-cards/arcane-animate-dead.png)
+![](./paizo-official-cards/arcane-animate-dead.jpg)  |  ![](./generated-cards/arcane-animate-dead.jpg)
+![](./paizo-official-cards/arcane-blur.jpg)  |  ![](./generated-cards/arcane-blur.jpg)
+![](./paizo-official-cards/arcane-dancing-lights.jpg)  |  ![](./generated-cards/arcane-dancing-lights.jpg)
+![](./paizo-official-cards/arcane-elemental-form.jpg)  |  ![](./generated-cards/arcane-elemental-form.jpg)
+![](./paizo-official-cards/arcane-enthrall.jpg)  |  ![](./generated-cards/arcane-enthrall.jpg)
+![](./paizo-official-cards/arcane-hydraulic-push.jpg)  |  ![](./generated-cards/arcane-hydraulic-push.jpg)
+![](./paizo-official-cards/arcane-mage-hand.jpg)  |  ![](./generated-cards/arcane-mage-hand.jpg)
+![](./paizo-official-cards/divine-bless.jpg)  |  ![](./generated-cards/divine-bless.jpg)
+![](./paizo-official-cards/divine-detect-magic.jpg)  |  ![](./generated-cards/divine-detect-magic.jpg)
+![](./paizo-official-cards/divine-light.jpg)  |  ![](./generated-cards/divine-light.jpg)
+![](./paizo-official-cards/divine-read-aura.jpg)  |  ![](./generated-cards/divine-read-aura.jpg)
+![](./paizo-official-cards/divine-stabilize.jpg)  |  ![](./generated-cards/divine-stabilize.jpg)
+![](./paizo-official-cards/filenames.txt)  |  ![](./generated-cards/filenames.txt)
+![](./paizo-official-cards/focus-agile-feet.jpg)  |  ![](./generated-cards/focus-agile-feet.jpg)
+![](./paizo-official-cards/focus-allegro.jpg)  |  ![](./generated-cards/focus-allegro.jpg)
+![](./paizo-official-cards/focus-dazzling-flash.jpg)  |  ![](./generated-cards/focus-dazzling-flash.jpg)
+![](./paizo-official-cards/focus-house-imaginary-walls.jpg)  |  ![](./generated-cards/focus-house-imaginary-walls.jpg)
+![](./paizo-official-cards/focus-loremaster-etude.jpg)  |  ![](./generated-cards/focus-loremaster-etude.jpg)
+![](./paizo-official-cards/focus-perfected-mind.jpg)  |  ![](./generated-cards/focus-perfected-mind.jpg)
