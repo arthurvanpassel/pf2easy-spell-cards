@@ -54,7 +54,7 @@ $(document).ready(function () {
 					$("body").on("click", "article.result", function (e) {
 						if (e.ctrlKey) {
 							if ($(this).hasClass('continue')) {
-								var length = $(this).find(".parte2 > section").length
+								var length = $(this).find(".parte2 > section").length;
 								var lastelement = $(this).find(".parte2 > section:last-child")[0];
 								if (length > 1 && lastelement) {
 									$(this).next().find(".parte2").prepend(lastelement.outerHTML);
@@ -91,7 +91,7 @@ $(document).ready(function () {
 									sizeclass = this.classList[1];
 								}
 								$(this).addClass("continue");
-								$(this).after("<article class='result back " + sizeclass + "'><div class='parte2'></div></article>");
+								$(this).after("<article class='result back "+ sizeclass +"'><div class='parte2'></div></article>");
 							}
 						} else if (e.altKey) {
 							var title = $(this).find("h1")[0].innerText.replace("’", "'");
