@@ -25,14 +25,32 @@ $(document).ready(function () {
 						$("body.cards").css("--border-radius", $(this).val() + "px");
 					});
 
+					var help = '<a id="help" href="#" class="ml-auto">Card functions help</a>';
+					$(help).insertAfter($('body > header .slidecontainer'));
+					$('#help').on('click', function () {
+						if (window.confirm("There are essentially 3 functions to use on a card:\n\n1. Click: Change the description font size.\nThis goes from normal -> small -> smaller -> bigger -> big -> normal.\n\n2. Ctrl + Click: Split the card in a front and back.\nClick once to make the back card appear, and keep clicking to add more paragraphs.\nClick on the backside of the card to put the last paragraph back on the front card.\n\n3. Alt + Click: Change default description to api description.\nSometimes, the description is not complete with heightened information.\nYou can switch between the default and an (experimental) one, that might improve the card.\nThis is not yet finished and doesn't always give good results (parsing errors)\n\nThese functions can be used together to create the best cards for your use.\n\nYou can also change the border radius of the cards with the slider next to this link.\n\nWhen you're done just click print and enjoy!\nClick 'ok' for more info on https://github.com/arthurvanpassel/pf2easy-spell-cards")) {
+							window.open('https://github.com/arthurvanpassel/pf2easy-spell-cards', "_blank");
+						};
+					});
+
 					if (window.location.pathname.indexOf("spellbook") > 0) {
 						$(".details p:first-child").each(function () {
-							this.innerHTML = this.innerHTML.substring(0, this.innerHTML.indexOf('; <strong>Source'));
+							if (this.innerHTML.indexOf('; <strong>Source') > 0) {
+								this.innerHTML = this.innerHTML.substring(0, this.innerHTML.indexOf('; <strong>Source'));
+							}
 						});
 					}
 
-					var jsonapi = $.getJSON('https://raw.githubusercontent.com/arthurvanpassel/pf2easy-spell-cards/main/pf2-api-spells-adapted.json', function(data) {});
-					
+					let jsonapi;
+					let httpRequest = new XMLHttpRequest();
+					httpRequest.open("GET", "https://raw.githubusercontent.com/arthurvanpassel/pf2easy-spell-cards/main/pf2-api-spells-adapted-name%20and-desc.json", true);
+					httpRequest.send();
+					httpRequest.addEventListener("readystatechange", function () {
+						if (this.readyState === this.DONE) {
+							jsonapi = JSON.parse(this.response);
+						}
+					});
+
 					$("body").on("click", "article.result", function (e) {
 						if (e.ctrlKey) {
 							if ($(this).hasClass('continue')) {
@@ -73,14 +91,22 @@ $(document).ready(function () {
 									sizeclass = this.classList[1];
 								}
 								$(this).addClass("continue");
-								$(this).after("<article class='result back "+ sizeclass +"'><div class='parte2'></div></article>");
+								$(this).after("<article class='result back " + sizeclass + "'><div class='parte2'></div></article>");
 							}
 						} else if (e.altKey) {
-							var title = $(this).find("h1")[0].innerText;
-							var item = jsonapi.find(element => element.name.toUpperCase() == title)
-							console.log(item)
-							$(this).find(".parte2")[0].innerHTML = item.description
-
+							var title = $(this).find("h1")[0].innerText.replace("’", "'");
+							var i = jsonapi.list.findIndex(element => element.name.toUpperCase() == title);
+							if (jsonapi.list[i].current == "old") {
+								$(this).find(".parte2")[0].innerHTML = jsonapi.list[i].description;
+								jsonapi.list[i].current = "description";
+							} else if (jsonapi.list[i].current == "description") {
+								$(this).find(".parte2")[0].innerHTML = jsonapi.list[i].old;
+								jsonapi.list[i].current = "old";
+							} else {
+								jsonapi.list[i].old = $(this).find(".parte2")[0].innerHTML;
+								jsonapi.list[i].current = "description";
+								$(this).find(".parte2")[0].innerHTML = jsonapi.list[i].description;
+							}
 						} else {
 							if (!$(this).hasClass('back')) {
 								var oldClass = "";
@@ -99,7 +125,7 @@ $(document).ready(function () {
 								} else {
 									newClass = 'big';
 								}
-				
+
 								$(this).removeClass(oldClass);
 								$(this).addClass(newClass);
 								if ($(this).hasClass('continue')) {
