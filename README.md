@@ -43,4 +43,6 @@ There are still some things that could improve, and I would like to add a recto 
 
 
 ## Results
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
 ![](./paizo-official-cards/arcane-animate-dead.jpg)  |  ![](./generated-cards/arcane-animate-dead.png)
