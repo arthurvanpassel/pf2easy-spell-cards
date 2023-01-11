@@ -20,16 +20,19 @@ body.cards main#lienzo {
 	margin: auto;
 }
 
-body.cards main article.result:first-child,
-body.cards main article.result:nth-child(2),
-body.cards main article.result:nth-child(3) {
-	margin-top: 15.15mm;
+body.cards main article.result:nth-child(9n + 1),
+body.cards main article.result:nth-child(9n + 2),
+body.cards main article.result:nth-child(9n + 3) {
+	margin-top: 15.215mm;
 }
 
 body.cards main article.result:nth-child(9n + 7),
 body.cards main article.result:nth-child(9n + 8),
 body.cards main article.result:nth-child(9n + 9) {
-	margin-bottom: 30.3mm;
+	/* width main: 210mm */
+	/* margin-bottom: 15.215mm;  */
+	/* width main: 211mm */
+	margin-bottom: 15.745mm;
 }
 
 body.cards article.result {
