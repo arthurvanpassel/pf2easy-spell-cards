@@ -1,5 +1,5 @@
-[
-  [
+{
+  "list": [
     {
       "name": "Abyssal Plague",
       "description": "<section class='content'><p>Your touch afflicts the target with Abyssal plague, which siphons fragments of their soul away to empower the Abyss. The effect is based on the target's Fortitude save.</p><p><strong>Abyssal Plague</strong> (disease); <strong>Level</strong> 9. The target can't recover from the drained condition from Abyssal plague until the disease is cured. <strong>Stage 1</strong> drained 1 (1 day); <strong>Stage 2</strong> drained increases by 2 (1 day).</p><p></p><p><strong>Critical Success</strong> The target is unaffected.<br /></p><p><strong>Success</strong> The target takes 2 evil damage per spell level, and takes a –2 status penalty to saves against Abyssal plague for 1 day or until the target contracts it, whichever comes first.<br /></p><p><strong>Failure</strong> The target is afflicted with Abyssal plague at stage 1.<br /></p><p><strong>Critical Failure</strong> The target is afflicted with Abyssal plague at stage 2.</section>"
@@ -7649,7 +7649,7 @@
       "description": "<section class='content'><p>Developed before the introduction of the Iron Lagoon, this cantrip for superheating metal has also found valuable combat use. You superheat the target, dealing 3d6 fire damage. If the target is a metal object, reduce its Hardness by an amount equal to the damage dealt until the end of your next turn.</p><p></p><p><strong>Critical Success</strong> The target is unaffected.<br /></p><p><strong>Success</strong> The target takes half damage.<br /></p><p><strong>Failure</strong> The target takes full damage.<br /></p><p><strong>Critical Failure</strong> The target takes double damage, and if it's a metal creature, it gains weakness 2 to physical damage until the end of your next turn.</p></section><section class='content extra'><p><strong>Heightened (+1)</strong> The damage increases by 2d6, and the weakness on a critical failure increases by 2.</section>"
     }
   ],
-	[
+  [
     {
       "name": "Dwarven Lore",
       "description": "<section class='content'><p>You eagerly absorbed the old stories and traditions of your ancestors, your gods, and your people, studying in subjects and techniques passed down for generation upon generation. You gain the trained proficiency rank in Crafting and Religion. If you would automatically become trained in one of those skills (from your background or class, for example), you instead become trained in a skill of your choice. You also become trained in Dwarven Lore.</section>"
@@ -31721,4 +31721,4 @@
       "description": "<section class='content'><p>Emulating the great defenders throughout dwarven history, you close your mind to the sensation of pain, becoming as resolute as stone itself. You gain resistance 10 to all damage. This effect lasts until the end of your next turn or immediately upon being critically hit.</section>"
     }
   ]
-]
+}
