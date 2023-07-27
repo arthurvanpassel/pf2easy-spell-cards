@@ -50,6 +50,7 @@ If you have any questions or suggestions, don't hesitate to hit me up! I made th
 - I still realy want to add a recto verso option, so you don't have to glue the front and back together, but don't really know how to properly display that in the browser so it doesn't look too complicated.
 
 - The Alt - Click functionality is dependant on an api which still needs some improvements as well. I hope the parsing issues can be fixed, and then the cards will be even better!
+  - UPDATE: I've improved the api list! I've made a separate script which needs to be run on the Archives of Nethys to get the feat and spell data, and replace all the markdown with my own code! I could only get it to work on AoN because the elasticsearch endpoints are protected and can not be accessed from pf2easy..., maybe I can find a better way in the future (there is also the free accessible data on [the github from foundry](https://github.com/foundryvtt/pf2e/tree/master/packs/spells), but they differ slightly and don't use markdown)
 
 ### Next steps
 I am going to send this to Pf2 easy and maybe if they're interested, they can put it on their website! 
