@@ -126,11 +126,11 @@ async function getData(type) {
     .then(result => {
       let string = result
       console.log(string)
-      // for (let i = 0; i < regexArray.length; i++) {
-      //   const element = regexArray[i];
-      //   string = string.replace(element.regex, element.value)
-      //   console.log(type, i, element.regex, string)
-      // }
+      for (let i = 0; i < regexArray.length; i++) {
+        const element = regexArray[i];
+        string = string.replace(element.regex, element.value)
+        console.log(type, i, element.regex, string)
+      }
 
       console.log(string)
 
@@ -138,18 +138,13 @@ async function getData(type) {
       let array = [];
       for (let i = 0; i < data.hits.hits.length; i++) {
         const element = data.hits.hits[i];
-        let object = { name: element['_source'].name, description: converter.makeHtml(element['_source'].markdown) }
+        let object = { name: element['_source'].name, description: element['_source'].markdown }
         array.push(object)
       }
       return array;
     })
     .catch(error => console.log('error', error));
 }
-
-var script = document.createElement('script');
-script.src = "https://cdn.jsdelivr.net/npm/showdown@<version>/dist/showdown.min.js";
-document.getElementsByTagName('head')[0].appendChild(script);
-var converter = new showdown.Converter();
 
 let resultsSpells = await getData('spell')
 console.log(resultsSpells)
