@@ -9,7 +9,7 @@ If you execute the code, it changes the layout from the multi column layout, to 
 If you use the one-time-insert, you have to copy-paste the javascript code below into your browser's console, and the styling will be automatically added. Next you can slightly edit the cards with the extra functions listed below. Finally you can print the cards on an A4 to cut them and use them in your games.
 
 ```console
-var script = document.createElement('script'); script.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@main/one-time-insert.js"; document.querySelector('head').appendChild(script);
+var script = document.createElement('script'); script.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@latest/one-time-insert.js"; document.querySelector('head').appendChild(script);
 ```
 
 ### 2. Use a browser extension to automatically execute the code for multiple use.
