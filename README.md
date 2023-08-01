@@ -6,7 +6,11 @@ If you execute the code, it changes the layout from the multi column layout, to 
 
 ## How
 ### 1. One time insert
-If you use the one-time-insert, you have to copy-paste the javascript code into your browser's console, and the styling will be automatically added. Next you can slightly edit the cards with the extra functions listed below. Finally you can print the cards on an A4 to cut them and use them in your games.
+If you use the one-time-insert, you have to copy-paste the javascript code below into your browser's console, and the styling will be automatically added. Next you can slightly edit the cards with the extra functions listed below. Finally you can print the cards on an A4 to cut them and use them in your games.
+
+```console
+var script = document.createElement('script'); script.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@main/one-time-insert.js"; document.querySelector('head').appendChild(script);
+```
 
 ### 2. Use a browser extension to automatically execute the code for multiple use.
 Extensions like [User Javascript and CSS on Chrome]() or [Code Injector on Firefox](https://addons.mozilla.org/en-US/firefox/addon/codeinjector/), will allow you to automatically add the code to the website every time that u use it. Don't forget to enable jQuery, because it is used in the javascript code.
@@ -17,8 +21,8 @@ If you need a regex (like in Code Injector for example), you can use this regex:
 ### Extra functions
 There are essentially 3 functions to use on a card:
 
-1. Click: Change the description font size.
-This goes from normal -> small -> smaller -> bigger -> big -> normal.
+1. Slider: Change the description font size.
+This goes from smallest -> small -> normal (default) -> big -> bigger.
 
 2. Ctrl + Click: Split the card in a front and back.
 Click once to make the back card appear, and keep clicking to add more paragraphs.

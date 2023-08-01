@@ -4,6 +4,10 @@
 	border-radius: 50%;
 }
 
+body.cards * {
+	font-family: GoodOT, sans-serif;
+}
+
 body.cards {
 	/* Set the background to gray to visualize the page size in the print preview */
 	background-color: lightgray;
@@ -18,6 +22,7 @@ body.cards main#lienzo {
 	justify-content: center;
 	width: 210mm;
 	margin: auto;
+	gap: 0;
 }
 
 body.cards main article.result:nth-child(9n + 1),
@@ -44,6 +49,7 @@ body.cards article.result {
 	border: 1px dashed lightgray;
 	border-radius: var(--border-radius);
 	position: relative;
+	margin-bottom: 0 !important;
 }
 
 body.cards header>h1,
@@ -76,6 +82,14 @@ body.cards section.details>p {
 	letter-spacing: -0.3px;
 }
 
+body.cards section.details span.source {
+	font-family: GoodOT, sans-serif;
+}
+
+body.cards.hideSources section.details span.source {
+	display: none;
+}
+
 body.cards .parte2 section>p,
 body.cards .parte2 section li,
 body.cards article:after,
@@ -85,7 +99,7 @@ body.cards article:before {
 }
 
 body.cards article.result a {
-    background: none;
+	background: none;
 }
 
 body.cards .parte2 section ul {
@@ -94,12 +108,38 @@ body.cards .parte2 section ul {
 }
 
 body.cards .parte2 section p.tab0 {
-    text-indent: -1em;
-    margin-left: 1em;
+	text-indent: -1em;
+	margin-left: 1em;
+}
+
+body.cards .parte2 section actions::before {
+	font-family: 'Pathfinder_Icons', sans-serif;
+	font-style: normal;
+	font-size: 0.9em;
+}
+
+body.cards .parte2 section actions[string="Reaction"]::before {
+	content: "\E904";
+}
+
+body.cards .parte2 section actions[string="Free Action"]::before {
+	content: "\E903";
+}
+
+body.cards .parte2 section actions[string="Single Action"]::before {
+	content: "\E902";
+}
+
+body.cards .parte2 section actions[string="Two Actions"]::before {
+	content: "\E901";
+}
+
+body.cards .parte2 section actions[string="Three Actions"]::before {
+	content: "\E900";
 }
 
 body.cards .parte2 section label.nolink {
-    margin: 0;
+	margin: 0;
 }
 
 body.cards .big .parte2 section>p,
@@ -130,17 +170,17 @@ body.cards .tiny:before {
 	font-size: 12px;
 }
 
-body.cards .result.continue:after, 
+body.cards .result.continue:after,
 body.cards .result.back:before {
-	font-family: Goodot;
+	font-family: GoodOT, sans-serif;
 	font-weight: bold;
 }
 
 body.cards .result.continue:after {
 	content: '(Continued on back)';
 	position: absolute;
-    bottom: 10px;
-    left: 10px;
+	bottom: 10px;
+	left: 10px;
 }
 
 body.cards .result.back:before {
@@ -158,11 +198,13 @@ body.cards .result.back .content.first p:not(.tab0) {
 		-webkit-print-color-adjust: exact;
 	}
 
-	body.cards>header {
+	body.cards>header,
+	body.cards article.result .slider {
 		display: none !important;
 	}
 
-	body.cards, body.cards main#lienzo {
+	body.cards,
+	body.cards main#lienzo {
 		background-color: initial;
 	}
 }

@@ -118,6 +118,11 @@ async function getData(type) {
       // remove emtpy paragraphs 
       regex: /<p><\/p>/gm,
       value: ""
+    },
+    {
+      // remove strange bits
+      regex: / &lt;%[^;>]*[;|>]/gm,
+      value: ""
     }
   ]
 

@@ -5830,7 +5830,7 @@
     },
     {
       "name": "Esoteric Polymath",
-      "description": "<section class='content'><p>You keep a book of occult spells, similar to a wizard's spellbook, and can use its spells to supplement your spell repertoire. Add all the spells in your repertoire to this book for free. You can use the Occultism skill to  &lt;%GENERAL.SKILLS%4%%&gt; Learn Spells &lt;%END> and add them to your spellbook by paying the appropriate cost, similar to a wizard.</p><p> During your daily preparations, choose any one spell from your book of occult spells. If that spell is already in your spell repertoire, you can treat it as an additional signature spell that day. If it isn't in your repertoire, treat it as though it were until your next daily preparations.</p><p><strong>Esoteric Polymath leads to...</strong></p><p>Eclectic Polymath, Impossible Polymath</section>"
+      "description": "<section class='content'><p>You keep a book of occult spells, similar to a wizard's spellbook, and can use its spells to supplement your spell repertoire. Add all the spells in your repertoire to this book for free. You can use the Occultism skill to  Learn Spells and add them to your spellbook by paying the appropriate cost, similar to a wizard.</p><p> During your daily preparations, choose any one spell from your book of occult spells. If that spell is already in your spell repertoire, you can treat it as an additional signature spell that day. If it isn't in your repertoire, treat it as though it were until your next daily preparations.</p><p><strong>Esoteric Polymath leads to...</strong></p><p>Eclectic Polymath, Impossible Polymath</section>"
     },
     {
       "name": "Inspire Competence",
@@ -7942,7 +7942,7 @@
     },
     {
       "name": "Bargain Hunter",
-      "description": "<section class='content'><p>You can  &lt;%GENERAL.SKILLS%2%%&gt; Earn Income &lt;%END> using Diplomacy, spending your days hunting for bargains and reselling at a profit. You can also spend time specifically sniffing out a great bargain on an item; this works as if you were using Earn Income with Diplomacy, except instead of gaining money, you purchase the item at a discount equal to the money you would have gained, gaining the item for free if your earned income equals or exceeds its cost. Finally, if you select Bargain Hunter during character creation at 1st level, you start play with an additional 2 gp.</section>"
+      "description": "<section class='content'><p>You can  Earn Income using Diplomacy, spending your days hunting for bargains and reselling at a profit. You can also spend time specifically sniffing out a great bargain on an item; this works as if you were using Earn Income with Diplomacy, except instead of gaining money, you purchase the item at a discount equal to the money you would have gained, gaining the item for free if your earned income equals or exceeds its cost. Finally, if you select Bargain Hunter during character creation at 1st level, you start play with an additional 2 gp.</section>"
     },
     {
       "name": "Battle Cry",
@@ -8406,7 +8406,7 @@
     },
     {
       "name": "Thorough Reports",
-      "description": "<section class='content'><p>Your reports are thorough and informative, and putting your thoughts to paper helps you retain the information. Keep track of each type of creature you successfully identify with  &lt;%GENERAL.SKILLS%5%%&gt; Recall Knowledge &lt;%END>. When attempting  &lt;%GENERAL.SKILLS%5%%&gt; Recall Knowledge &lt;%END> checks against creatures on your list in later encounters, you gain a +2 circumstance bonus, and you learn an additional fact about such creatures on a success.</p><p><strong>Thorough Reports leads to...</strong></p><p>Discerning Strike</section>"
+      "description": "<section class='content'><p>Your reports are thorough and informative, and putting your thoughts to paper helps you retain the information. Keep track of each type of creature you successfully identify with  Recall Knowledge. When attempting  Recall Knowledge checks against creatures on your list in later encounters, you gain a +2 circumstance bonus, and you learn an additional fact about such creatures on a success.</p><p><strong>Thorough Reports leads to...</strong></p><p>Discerning Strike</section>"
     },
     {
       "name": "Wayfinder Resonance Tinkerer",
@@ -11274,7 +11274,7 @@
     },
     {
       "name": "Sunder Enchantment",
-      "description": "<section class='content'><p>You can focus your superstition to break the magic of an item, in addition to destroying freestanding spells and those active on creatures. When you Sunder a Spell, you can instead attempt to counteract either an unattended magic item or one of your target's magic items. If your counteract attempt succeeds, the item becomes a mundane item of its type for 10 minutes. If you target an artifact, an  &lt;%TREASURE.CATEGORIES%48%%&gt; intelligent item, or a particularly powerful item, your counteract attempt automatically fails.</section>"
+      "description": "<section class='content'><p>You can focus your superstition to break the magic of an item, in addition to destroying freestanding spells and those active on creatures. When you Sunder a Spell, you can instead attempt to counteract either an unattended magic item or one of your target's magic items. If your counteract attempt succeeds, the item becomes a mundane item of its type for 10 minutes. If you target an artifact, an  intelligent item, or a particularly powerful item, your counteract attempt automatically fails.</section>"
     },
     {
       "name": "Furious Vengeance",
@@ -20026,7 +20026,7 @@
     },
     {
       "name": "Wrath of the First Ghoul",
-      "description": "<section class='content'><p>The ravenous maggots inside you become capable of exploding forth from your attacks into the wounds of an opponent, whispering telepathic words of destruction that invoke horrific flashbacks of Kabriri's transformation from  &lt;%ANCESTRIES%371%%&gt; elf &lt;%END> to ghoul or psychic images of hundreds of maggots bursting from the victim's flesh all at once. Make a melee Strike against a target creature. If it hits, in addition to taking damage from the Strike, the target is affected by a 10th-level casting of <em>power word kill</em>. If Wrath of the First Ghoul is used against a target elf, Leng ghoul, or worshipper of Pharasma and does not instantly kill the creature, the target takes double damage.</section>"
+      "description": "<section class='content'><p>The ravenous maggots inside you become capable of exploding forth from your attacks into the wounds of an opponent, whispering telepathic words of destruction that invoke horrific flashbacks of Kabriri's transformation from  elf to ghoul or psychic images of hundreds of maggots bursting from the victim's flesh all at once. Make a melee Strike against a target creature. If it hits, in addition to taking damage from the Strike, the target is affected by a 10th-level casting of <em>power word kill</em>. If Wrath of the First Ghoul is used against a target elf, Leng ghoul, or worshipper of Pharasma and does not instantly kill the creature, the target takes double damage.</section>"
     },
     {
       "name": "Triumphant Boast",
