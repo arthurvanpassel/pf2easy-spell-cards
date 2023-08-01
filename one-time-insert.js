@@ -2,7 +2,7 @@ let script = document.createElement('script');
 script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
 document.querySelector('head').appendChild(script);
 $(document).ready(function () {
-  $('head').append('<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@main/styling.css">')
+  $('head').append('<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@latest/styling.css">')
   $("main > script").remove();
   document.title = document.title + " - Cards";
   $("body").addClass('cards');
