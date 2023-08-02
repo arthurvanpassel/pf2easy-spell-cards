@@ -128,6 +128,10 @@ body.cards .parte2 section p.tab0 {
 	margin-left: 1em;
 }
 
+body.cards .parte2 section actions {
+	font-family: 'GoodOT', sans-serif
+}
+
 body.cards .parte2 section actions::before {
 	font-family: 'Pathfinder_Icons', sans-serif;
 	font-style: normal;

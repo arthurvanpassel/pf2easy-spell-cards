@@ -134,9 +134,9 @@ $(document).ready(function () {
       $(article).data('wrappedSource', true)
     }
     if (value) {
-      $('article.result').addClass('hideSource')
+      $(article).addClass('hideSource')
     } else {
-      $('article.result').removeClass('hideSource')
+      $(article).removeClass('hideSource')
     }
   }
 
