@@ -2,7 +2,7 @@ let script = document.createElement('script');
 script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
 document.querySelector('head').appendChild(script);
 $(document).ready(function () {
-  $('head').append('<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@latest/styling.css">')
+  $('head').append('<link rel="stylesheet" type="text/css" href="https://cdn.statically.io/gh/arthurvanpassel/pf2easy-spell-cards/main/styling.css">')
   $("main > script").remove();
   document.title = document.title + " - Cards";
   $("body").addClass('cards');
@@ -61,20 +61,24 @@ $(document).ready(function () {
       jsonapi = JSON.parse(this.response);
 
       $("article.result").each((key, element) => {
-        let actions = `
-          <div class="actions">
-            <div class="slider-wrapper"><input type="range" min="0" max="4" value="2" class="slider" id="size"><label for="size">Text size</label></div>
-            <div class="source-wrapper"><input type="checkbox" class="hideSourceInput" name="hideSourceInput" id="hideSourceInput-${key}"><label for="hideSourceInput-${key}">Hide Source</label></div>
-            <div class="aon-wrapper"><input type="checkbox" class="showAon" name="showAon" id="showAon-${key}"><label for="showAon-${key}">Show AoN description</label></div>
-            <div class="split-wrapper"><button class="split-left">&vartriangleleft;</button><button class="split-right">&vartriangleright;</button><label for="split">Split card</label></div>
-          </div>`;
-        $(element).prepend($(actions));
         let title = $(element).find("h1")[0].innerText.replace("’", "'");
-        let i = jsonapi.list.findIndex(element => element.name.toLowerCase() == title.toLowerCase());
-        $(element).data('i', i);
-        jsonapi.list[i].old = $(element).find(".parte2")[0].innerHTML;
+        let aon_description = jsonapi.list.find(element => element.name.toLowerCase() == title.toLowerCase()).description;
+        $(element).data('aon_description', aon_description);
+        $(element).data('old_description', $(element).find(".parte2")[0].innerHTML);
       });
     }
+  });
+
+  
+  $("article.result").each((key, element) => {
+    let actions = `
+      <div class="actions">
+        <div class="slider-wrapper"><input type="range" min="0" max="4" value="2" class="slider" id="size"><label for="size">Text size</label></div>
+        <div class="source-wrapper"><input type="checkbox" class="hideSourceInput" name="hideSourceInput" id="hideSourceInput-${key}"><label for="hideSourceInput-${key}">Hide Source</label></div>
+        <div class="aon-wrapper"><input type="checkbox" class="showAon" name="showAon" id="showAon-${key}"><label for="showAon-${key}">Show AoN description</label></div>
+        <div class="split-wrapper"><button class="split-left">&vartriangleleft;</button><button class="split-right">&vartriangleright;</button><label for="split">Split card</label></div>
+      </div>`;
+    $(element).prepend($(actions));
   });
 
   $("body").on("click", "article.result", function (e) {
@@ -100,17 +104,14 @@ $(document).ready(function () {
   });
 
   function showAon(value, article) {
-    let i = $(article).data('i')
     if ($(article).hasClass('continue')) {
       $(article).removeClass("continue");
       $(article).next().remove();
     }
     if (value) {
-      $(article).find(".parte2")[0].innerHTML = jsonapi.list[i].description;
-      jsonapi.list[i].current = "description";
+      $(article).find(".parte2")[0].innerHTML = $(article).data('aon_description');
     } else {
-      $(article).find(".parte2")[0].innerHTML = jsonapi.list[i].old;
-      jsonapi.list[i].current = "old";
+      $(article).find(".parte2")[0].innerHTML = $(article).data('old_description');
     }
   }
 
