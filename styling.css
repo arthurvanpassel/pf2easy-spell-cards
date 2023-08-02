@@ -18,7 +18,9 @@ body.cards main#lienzo {
 	justify-content: center;
 	width: 210mm;
 	margin: auto;
+	margin-bottom: 50px;
 	gap: 0;
+	padding: 0;
 }
 
 body.cards main article.result:nth-child(9n + 1),
@@ -37,7 +39,7 @@ body.cards main article.result:nth-child(9n + 9) {
 }
 
 body.cards article.result {
-	padding: 5px 10px;
+	padding: 5px 10px !important;
 	height: 3.5in;
 	width: 2.5in;
 	display: flex;
@@ -46,6 +48,20 @@ body.cards article.result {
 	border-radius: var(--border-radius);
 	position: relative;
 	margin-bottom: 0 !important;
+}
+
+body.cards article.result:not(:hover) .actions {
+	display: none;
+}
+
+body.cards article.result .actions {
+	position: absolute;
+	background: white;
+	z-index: 1;
+	right: 100%;
+	display: block;
+	width: max-content;
+	padding: 5px;
 }
 
 body.cards header>h1,
@@ -82,8 +98,12 @@ body.cards section.details span.source {
 	font-family: GoodOT, sans-serif;
 }
 
-body.cards.hideSources section.details span.source {
+body.cards article.result.hideSource section.details span.source {
 	display: none;
+}
+
+body.cards .parte2 {
+	overflow-y: auto;
 }
 
 body.cards .parte2 section>p,
@@ -194,9 +214,17 @@ body.cards .result.back .content.first p:not(.tab0) {
 		-webkit-print-color-adjust: exact;
 	}
 
+	body.cards main#lienzo {
+		margin-bottom: 0;
+	}
+
 	body.cards>header,
 	body.cards article.result .slider {
 		display: none !important;
+	}
+
+	body.cards .parte2 {
+		overflow-y: initial;
 	}
 
 	body.cards,

@@ -13,31 +13,37 @@ var script_one_time = document.createElement('script'); script_one_time.src = "h
 ```
 
 ### 2. Use a browser extension to automatically execute the code for multiple use.
-Extensions like [User Javascript and CSS on Chrome]() or [Code Injector on Firefox](https://addons.mozilla.org/en-US/firefox/addon/codeinjector/), will allow you to automatically add the code to the website every time that u use it. Don't forget to enable jQuery, because it is used in the javascript code.
+Extensions like [User Javascript and CSS on Chrome]() or [Code Injector on Firefox](https://addons.mozilla.org/en-US/firefox/addon/codeinjector/), will allow you to automatically add the code to the website every time that u use it. 
+
+```
+var script_every_time = document.createElement('script'); script_every_time.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@latest/javascript.js"; document.querySelector('head').appendChild(script_every_time);
+```
+
 This works essentially in the same way as the one time insert, except that you will see a button with cards to click when you want to use this functionality on your spells.
 
 If you need a regex (like in Code Injector for example), you can use this regex: pf2easy\\.com\\/(spellbook|sheets)\\/spells.php
 
 ### Extra functions
-There are essentially 3 functions to use on a card:
+There are essentially 4 functions to use on a card:
+
+There are essentially 4 functions to use on a card:\n\n1. Slider: Change the description font size.\nThis goes from smallest -> small -> normal (default) -> big -> bigger.\n\n2. Show/Hide source: Show or hide the source. You can also show or hide on all cards with the link on top of the page\n\n3. Show/Hide AoN description: Change default description to AoN description. Sometimes, the description is not complete with heightened information. You can switch between the pf2easy and the AoN, which might improve the card.\nYou can also switch all cards with the link on top of the page\n\n4. Split card: \nSplit the card in a front and back. This works per paragraph.
 
 1. Slider: Change the description font size.
 This goes from smallest -> small -> normal (default) -> big -> bigger.
 
-2. Ctrl + Click: Split the card in a front and back.
-Click once to make the back card appear, and keep clicking to add more paragraphs.
-Click on the backside of the card to put the last paragraph back on the front card.
+2. Show/Hide source: Show or hide the source.
+You can also show or hide on all cards with the link on top of the page. This provides more room for description, and the source is also not displayed on the official Paizo cards.
 
-3. Alt + Click: Change default description to api description.
+3. Show/Hide AoN description: Change default description to AoN description.
 Sometimes, the description is not complete with heightened information.
-You can switch between the default and an (experimental) one, that might improve the card.
-This is not yet finished and doesn't always give good results (parsing errors) (see in progress below).
+You can switch between the pf2easy and the AoN, which might improve the card.\nYou can also switch all cards with the link on top of the page
+
+4. Split card: Split the card in a front and back.
+This works per paragraph.
 
 These functions can be used together to create the best cards for your use.
 
 You can also change the border radius of the cards with the slider next to this link.
-
-You can also remove the source from the cards, since they don't appear on the official ones either.
 
 
 ## Why
@@ -53,7 +59,7 @@ If you have any questions or suggestions, don't hesitate to hit me up! I made th
 
 - I still realy want to add a recto verso option, so you don't have to glue the front and back together, but don't really know how to properly display that in the browser so it doesn't look too complicated.
 
-- The Alt - Click functionality is dependant on an api which still needs some improvements as well. I hope the parsing issues can be fixed, and then the cards will be even better!
+- The 'other description' functionality is dependant on an api which still needs some improvements as well. I hope the parsing issues can be fixed, and then the cards will be even better!
   - UPDATE: I've improved the api list! I've made a separate script which needs to be run on the Archives of Nethys to get the feat and spell data, and replace all the markdown with my own code! I could only get it to work on AoN because the elasticsearch endpoints are protected and can not be accessed from pf2easy..., maybe I can find a better way in the future (there is also the free accessible data on [the github from foundry](https://github.com/foundryvtt/pf2e/tree/master/packs/spells), but they differ slightly and don't use markdown)
 
 ### Next steps
