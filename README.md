@@ -9,14 +9,14 @@ If you execute the code, it changes the layout from the multi column layout, to 
 If you use the one-time-insert, you have to copy-paste the javascript code below into your browser's console, and the styling will be automatically added. Next you can slightly edit the cards with the extra functions listed below. Finally you can print the cards on an A4 to cut them and use them in your games.
 
 ```console
-var script_one_time = document.createElement('script'); script_one_time.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@latest/one-time-insert.js"; document.querySelector('head').appendChild(script_one_time);
+var script_one_time = document.createElement('script'); script_one_time.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@main/one-time-insert.js"; document.querySelector('head').appendChild(script_one_time);
 ```
 
 ### 2. Use a browser extension to automatically execute the code for multiple use.
 Extensions like [User Javascript and CSS on Chrome]() or [Code Injector on Firefox](https://addons.mozilla.org/en-US/firefox/addon/codeinjector/), will allow you to automatically add the code to the website every time that u use it. 
 
 ```
-var script_every_time = document.createElement('script'); script_every_time.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@latest/javascript.js"; document.querySelector('head').appendChild(script_every_time);
+var script_every_time = document.createElement('script'); script_every_time.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@main/javascript.js"; document.querySelector('head').appendChild(script_every_time);
 ```
 
 This works essentially in the same way as the one time insert, except that you will see a button with cards to click when you want to use this functionality on your spells.

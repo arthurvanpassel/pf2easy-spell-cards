@@ -12,7 +12,7 @@ let observer = new MutationObserver(function (mutations) {
 			document.querySelector('small.ml-auto').innerHTML = document.querySelector('small.ml-auto').innerHTML + button
 			document.querySelector("button#cards_btn").addEventListener('click', function () {
 				this.disabled = true;
-				let script_one_time = document.createElement('script'); script_one_time.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@latest/one-time-insert.js"; document.querySelector('head').appendChild(script_one_time);
+				let script_one_time = document.createElement('script'); script_one_time.src = "https://cdn.jsdelivr.net/gh/arthurvanpassel/pf2easy-spell-cards@main/one-time-insert.js"; document.querySelector('head').appendChild(script_one_time);
 			}, false);
 		}
 	});
