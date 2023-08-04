@@ -180,12 +180,16 @@ $(document).ready(function () {
         front.find(".parte2 > section:last-child").append(firstchild.outerHTML);
         $(firstchild).remove();
         if (!$(firstelement).children().length) {
-          front.removeClass("continue");
-          back.remove();
+          firstelement.remove();
         }
       } else {
         front.find(".parte2").append(firstelement.outerHTML);
         $(firstelement).remove();
+      }
+      // after last element back to front -> delete
+      if (back.find(".parte2 > *").length == 0) {
+        back.remove();
+        front.removeClass("continue");
       }
     }
   }
