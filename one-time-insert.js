@@ -62,9 +62,9 @@ $(document).ready(function () {
 
       $("article.result").each((key, element) => {
         let title = $(element).find("h1")[0].innerText.replace("’", "'");
-        let aon_description = jsonapi.list.find(element => element.name.toLowerCase() == title.toLowerCase()).description;
-        $(element).data('aon_description', aon_description);
-        $(element).data('old_description', $(element).find(".parte2")[0].innerHTML);
+        let aon_description = jsonapi.list.find(spell => spell.name.toLowerCase() == title.toLowerCase())?.description;
+        if (aon_description) $(element).data('aon_description', aon_description);
+        $(element).data('old_description', $(element).find(".parte2")[0]?.innerHTML);
       });
     }
   });
