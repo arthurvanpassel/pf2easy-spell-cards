@@ -106,12 +106,14 @@ body.cards .parte2 {
 	overflow-y: auto;
 }
 
+body.cards .parte2 section,
 body.cards .parte2 section>p,
 body.cards .parte2 section li,
 body.cards article:after,
 body.cards article:before {
 	font-size: 11px;
 	line-height: 1.25em;
+	font-family: GoodOT, sans-serif;
 }
 
 body.cards article.result a {
